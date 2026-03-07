@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bdms</name>
 	<description>Blood Donation Management System API Spring Boot</description>
-	<url/>
+	<url>https://github.com/one-project-one-month/BDMS_Java</url>
 	<licenses>
 		<license/>
 	</licenses>
@@ -21,10 +21,10 @@
 		<developer/>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<connection>scm:git:git://github.com/one-project-one-month/BDMS_Java.git</connection>
+		<developerConnection>scm:git:ssh://github.com/one-project-one-month/BDMS_Java.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/one-project-one-month/BDMS_Java</url>
 	</scm>
 	<properties>
 		<java.version>21</java.version>
