@@ -5,5 +5,5 @@ import com.opom.bdms.entity.BloodRequest;
 /**
  * Repository interface for BloodRequest entity.
  */
-public interface BloodRequestRepository extends BaseRepository<BloodRequest, Long> {
+public interface BloodRequestRepository extends BaseRepository<BloodRequest> {
 }

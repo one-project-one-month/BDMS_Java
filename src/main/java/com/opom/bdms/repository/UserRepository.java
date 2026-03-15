@@ -5,5 +5,5 @@ import com.opom.bdms.entity.User;
 /**
  * Repository interface for User entity.
  */
-public interface UserRepository extends BaseRepository<User, Long> {
+public interface UserRepository extends BaseRepository<User> {
 }

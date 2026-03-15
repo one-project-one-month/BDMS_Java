@@ -5,5 +5,5 @@ import com.opom.bdms.entity.Hospital;
 /**
  * Repository interface for Hospital entity.
  */
-public interface HospitalRepository extends BaseRepository<Hospital, Long> {
+public interface HospitalRepository extends BaseRepository<Hospital> {
 }

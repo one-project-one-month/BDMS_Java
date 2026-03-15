@@ -5,5 +5,5 @@ import com.opom.bdms.entity.Donation;
 /**
  * Repository interface for Donation entity.
  */
-public interface DonationRepository extends BaseRepository<Donation, Long> {
+public interface DonationRepository extends BaseRepository<Donation> {
 }
