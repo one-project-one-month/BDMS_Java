@@ -91,6 +91,19 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
+    @ExceptionHandler(DuplicateEntityException.class)
+    public ResponseEntity<ApiResponse> handleDuplicateEntityException(
+            DuplicateEntityException ex,
+            HttpServletRequest request) {
+        log.error("Duplicate entity: {}", ex.getMessage());
+        ApiResponse response = ApiResponseUtil.error(
+                ex.getMessage(),
+                HttpStatus.CONFLICT,
+                request
+        );
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+    }
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiResponse> handleIllegalArgumentException(
             IllegalArgumentException ex,

@@ -35,6 +35,7 @@ public abstract class BaseServiceImpl<ENTITY extends MasterEntity, REQUEST, RESP
     @Override
     @Transactional
     public RESPONSE create(REQUEST request) {
+        validateBeforeCreate(request);
         ENTITY entity = mapRequestToEntity(request);
         ENTITY savedEntity = repository.save(entity);
         return mapEntityToResponse(savedEntity);
@@ -51,6 +52,7 @@ public abstract class BaseServiceImpl<ENTITY extends MasterEntity, REQUEST, RESP
     @Transactional
     public RESPONSE update(Long id, REQUEST request) {
         ENTITY entity = findByIdOrThrow(id);
+        validateBeforeUpdate(id, request, entity);
         updateEntityFromRequest(entity, request);
         ENTITY updatedEntity = repository.save(entity);
         return mapEntityToResponse(updatedEntity);
@@ -131,6 +133,34 @@ public abstract class BaseServiceImpl<ENTITY extends MasterEntity, REQUEST, RESP
      */
     protected void validateSortBy(String sortBy) {
         // Default implementation - can be overridden in subclasses for custom validation
+    }
+
+    /**
+     * Override this method to validate before creating a new entity.
+     * Use this to check for duplicate unique fields (e.g., email, code, name).
+     * Throw DuplicateEntityException if validation fails.
+     *
+     * @param request The request DTO containing data for the new entity
+     * @throws com.opom.bdms.exception.DuplicateEntityException if a unique constraint would be violated
+     */
+    protected void validateBeforeCreate(REQUEST request) {
+        // Default implementation does nothing
+        // Override in subclasses to add validation logic
+    }
+
+    /**
+     * Override this method to validate before updating an existing entity.
+     * Use this to check for duplicate unique fields, excluding the current entity.
+     * Throw DuplicateEntityException if validation fails.
+     *
+     * @param id The ID of the entity being updated
+     * @param request The request DTO containing updated data
+     * @param existingEntity The existing entity being updated
+     * @throws com.opom.bdms.exception.DuplicateEntityException if a unique constraint would be violated
+     */
+    protected void validateBeforeUpdate(Long id, REQUEST request, ENTITY existingEntity) {
+        // Default implementation does nothing
+        // Override in subclasses to add validation logic
     }
 
     private ENTITY findByIdOrThrow(Long id) {
