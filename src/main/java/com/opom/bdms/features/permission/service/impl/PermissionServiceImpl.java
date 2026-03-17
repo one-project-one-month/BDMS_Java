@@ -1,12 +1,13 @@
-package com.opom.bdms.permission.service.impl;
+package com.opom.bdms.features.permission.service.impl;
 
 import com.opom.bdms.entity.Permission;
+import com.opom.bdms.entity.User;
 import com.opom.bdms.exception.DuplicateEntityException;
-import com.opom.bdms.permission.dto.request.PermissionFilter;
-import com.opom.bdms.permission.dto.request.PermissionRequest;
-import com.opom.bdms.permission.dto.response.PermissionResponse;
-import com.opom.bdms.permission.mapper.PermissionMapper;
-import com.opom.bdms.permission.service.PermissionService;
+import com.opom.bdms.features.permission.dto.request.PermissionFilter;
+import com.opom.bdms.features.permission.dto.request.PermissionRequest;
+import com.opom.bdms.features.permission.dto.response.PermissionResponse;
+import com.opom.bdms.features.permission.mapper.PermissionMapper;
+import com.opom.bdms.features.permission.service.PermissionService;
 import com.opom.bdms.repository.PermissionRepository;
 import com.opom.bdms.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;

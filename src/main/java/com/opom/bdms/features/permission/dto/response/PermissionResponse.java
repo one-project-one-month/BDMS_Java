@@ -1,4 +1,4 @@
-package com.opom.bdms.permission.dto.response;
+package com.opom.bdms.features.permission.dto.response;
 
 import com.opom.bdms.dto.response.MasterData;
 import lombok.Builder;

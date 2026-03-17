@@ -1,9 +1,9 @@
-package com.opom.bdms.permission.mapper;
+package com.opom.bdms.features.permission.mapper;
 
 import com.opom.bdms.entity.Permission;
 import com.opom.bdms.mapper.MasterDataMapper;
-import com.opom.bdms.permission.dto.request.PermissionRequest;
-import com.opom.bdms.permission.dto.response.PermissionResponse;
+import com.opom.bdms.features.permission.dto.request.PermissionRequest;
+import com.opom.bdms.features.permission.dto.response.PermissionResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

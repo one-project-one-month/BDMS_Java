@@ -1,4 +1,4 @@
-package com.opom.bdms.permission.dto.request;
+package com.opom.bdms.features.permission.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 

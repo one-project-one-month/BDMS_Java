@@ -1,11 +1,11 @@
-package com.opom.bdms.permission.controller;
+package com.opom.bdms.features.permission.controller;
 
 import com.opom.bdms.dto.request.PageAndFilterDTO;
 import com.opom.bdms.dto.response.ApiResponse;
-import com.opom.bdms.permission.dto.request.PermissionFilter;
-import com.opom.bdms.permission.dto.request.PermissionRequest;
-import com.opom.bdms.permission.dto.response.PermissionResponse;
-import com.opom.bdms.permission.service.PermissionService;
+import com.opom.bdms.features.permission.dto.request.PermissionFilter;
+import com.opom.bdms.features.permission.dto.request.PermissionRequest;
+import com.opom.bdms.features.permission.dto.response.PermissionResponse;
+import com.opom.bdms.features.permission.service.PermissionService;
 import com.opom.bdms.util.ApiResponseUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;

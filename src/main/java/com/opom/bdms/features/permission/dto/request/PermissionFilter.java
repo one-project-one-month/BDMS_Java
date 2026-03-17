@@ -1,4 +1,4 @@
-package com.opom.bdms.permission.dto.request;
+package com.opom.bdms.features.permission.dto.request;
 
 import com.opom.bdms.dto.request.BaseFilter;
 import lombok.Data;
