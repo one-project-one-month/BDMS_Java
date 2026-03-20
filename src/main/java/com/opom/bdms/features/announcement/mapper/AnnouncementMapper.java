@@ -33,16 +33,12 @@ public class AnnouncementMapper {
                 .id(entity.getId())
                 .title(entity.getTitle())
                 .content(entity.getContent())
-                .expiredAt(entity.getExpiredAt())
                 .masterData(masterDataMapper.toMasterData(entity))
                 .build();
     }
 
     public void updateEntity(Announcement entity, AnnouncementRequest request) {
-
         entity.setTitle(request.title());
-        entity.setContent(request.content());
-        entity.setExpiredAt(request.expiredAt());
     }
 
 }

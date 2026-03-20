@@ -11,27 +11,26 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-        private static final String[] PUBLIC_ENDPOINTS = {
-                        "/swagger-ui/**",
-                        "/swagger-ui.html",
-                        "/v3/api-docs/**",
-                        "/api/v1/bdms/permissions/**",
-                        "/api/v1/bdms/donors/**",
-                        "/api/v1/bdms/bloodRequest/**",
-                        "/api/v1/bdms/announcements/**",
-                        "/api/v1/bdms/hospitals/**"                
-        };
+    private static final String[] PUBLIC_ENDPOINTS = {
+            "/swagger-ui/**",
+            "/swagger-ui.html",
+            "/v3/api-docs/**",
+            "/api/v1/bdms/permissions/**",
+            "/api/v1/bdms/announcements/**",
+            "/api/v1/bdms/hospitals/**"
+    };
 
-        @Bean
-        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-                http
-                                .authorizeHttpRequests(auth -> auth
-                                                .requestMatchers(
-                                                                PUBLIC_ENDPOINTS)
-                                                .permitAll()
-                                                .anyRequest().authenticated())
-                                .csrf(AbstractHttpConfigurer::disable);
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(
+                                PUBLIC_ENDPOINTS
+                        ).permitAll()
+                        .anyRequest().authenticated()
+                )
+                .csrf(AbstractHttpConfigurer::disable);
 
-                return http.build();
-        }
+        return http.build();
+    }
 }

@@ -39,12 +39,7 @@ public class HospitalMapper {
     }
 
     public void updateEntity(Hospital entity, HospitalRequest request) {
-
         entity.setName(request.name());
-        entity.setAddress(request.address());
-        entity.setPhone(request.phone());
-        entity.setEmail(request.email());
-        entity.setIsVerified(request.isVerified());
     }
 
 }
