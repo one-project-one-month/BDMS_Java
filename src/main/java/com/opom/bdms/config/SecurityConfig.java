@@ -16,7 +16,9 @@ public class SecurityConfig {
                         "/swagger-ui.html",
                         "/v3/api-docs/**",
                         "/api/v1/bdms/permissions/**",
-                        "/api/v1/bdms/donors/**"
+                        "/api/v1/bdms/donors/**",
+                        "/api/v1/bdms/bloodRequest/**"
+                          
         };
 
         @Bean
