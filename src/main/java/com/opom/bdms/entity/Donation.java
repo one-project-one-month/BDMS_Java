@@ -65,4 +65,6 @@ public class Donation extends MasterEntity {
 
     @OneToOne(mappedBy = "donation", cascade = CascadeType.ALL)
     private BloodInventory bloodInventory;
+
+
 }
