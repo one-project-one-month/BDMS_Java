@@ -57,4 +57,12 @@ public class DonorServiceImpl extends BaseServiceImpl<Donor, DonorRequest, Donor
     protected DonorResponse mapEntityToResponse(Donor entity) {
         return donorMapper.toResponse(entity);
     }
+
+    @Override
+    protected java.util.Map<String, String> getFieldMapping() {
+        return java.util.Map.of(
+                "nrc_no", "nrcNo",
+                "date_of_birth", "dateOfBirth",
+                "user_id", "user.id");
+    }
 }
