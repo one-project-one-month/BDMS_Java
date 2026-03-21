@@ -17,7 +17,8 @@ public class SecurityConfig {
             "/v3/api-docs/**",
             "/api/v1/bdms/permissions/**",
             "/api/v1/bdms/announcements/**",
-            "/api/v1/bdms/hospitals/**"
+            "/api/v1/bdms/hospitals/**",
+            "/api/v1/bdms/bloodInventories/**"
     };
 
     @Bean

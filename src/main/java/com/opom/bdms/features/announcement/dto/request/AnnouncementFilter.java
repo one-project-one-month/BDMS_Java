@@ -8,4 +8,5 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class AnnouncementFilter extends BaseFilter {
     private String title;
+    private String content;
 }
