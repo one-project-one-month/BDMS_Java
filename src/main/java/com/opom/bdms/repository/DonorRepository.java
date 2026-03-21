@@ -6,4 +6,8 @@ import com.opom.bdms.entity.Donor;
  * Repository interface for Donor entity.
  */
 public interface DonorRepository extends BaseRepository<Donor> {
+
+    boolean existsByNrcNo(String nrcNo);
+
+    boolean existsByNrcNoAndIdNot(String nrcNo, Long id);
 }
