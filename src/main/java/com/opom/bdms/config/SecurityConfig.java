@@ -19,7 +19,8 @@ public class SecurityConfig {
                         "/api/v1/bdms/donors/**",
                         "/api/v1/bdms/bloodRequest/**",
                         "/api/v1/bdms/announcements/**",
-                        "/api/v1/bdms/hospitals/**"                
+                        "/api/v1/bdms/hospitals/**",
+                         "/api/v1/bdms/certificates"
         };
 
         @Bean
