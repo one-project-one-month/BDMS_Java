@@ -13,11 +13,8 @@ import com.opom.bdms.repository.BloodRequestRepository;
 import com.opom.bdms.repository.HospitalRepository;
 import com.opom.bdms.repository.UserRepository;
 import com.opom.bdms.service.impl.BaseServiceImpl;
-import jakarta.persistence.EntityNotFoundException;
+import com.opom.bdms.util.RepoHelper;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BloodRequestServiceImpl extends BaseServiceImpl<BloodRequest, BloodRequestRequest, BloodRequestResponse, BloodRequestFilter> implements BloodRequestService {
@@ -52,10 +49,8 @@ public class BloodRequestServiceImpl extends BaseServiceImpl<BloodRequest, Blood
 
     @Override
     protected BloodRequest mapRequestToEntity(BloodRequestRequest request) {
-        User user = userRepository.findById(request.userId())
-                .orElseThrow(() -> new RuntimeException("User not found with user id: " + request.userId()));
-        Hospital hospital = hospitalRepository.findById(request.hospitalId())
-                .orElseThrow(() -> new RuntimeException("Hospital not found with hospital id: " + request.hospitalId()));
+        User user = RepoHelper.findByIdOrThrow(userRepository, request.userId(), "User", "user id");
+        Hospital hospital = RepoHelper.findByIdOrThrow(hospitalRepository, request.hospitalId(), "Hospital", "hospital id");
         return bloodRequestMapper.toEntity(request, user, hospital);
     }
 
@@ -66,10 +61,8 @@ public class BloodRequestServiceImpl extends BaseServiceImpl<BloodRequest, Blood
 
     @Override
     protected void updateEntityFromRequest(BloodRequest entity, BloodRequestRequest request) {
-        User user = userRepository.findById(request.userId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        Hospital hospital = hospitalRepository.findById(request.hospitalId())
-                .orElseThrow(() -> new RuntimeException("Hospital not found"));
+        User user = RepoHelper.findByIdOrThrow(userRepository, request.userId(), "User", "user id");
+        Hospital hospital = RepoHelper.findByIdOrThrow(hospitalRepository, request.hospitalId(), "Hospital", "hospital id");
 
         bloodRequestMapper.updateEntity(entity, request, user, hospital);
     }
