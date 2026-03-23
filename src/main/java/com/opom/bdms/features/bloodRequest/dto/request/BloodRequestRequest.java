@@ -4,8 +4,6 @@ import com.opom.bdms.enums.BloodGroup;
 import com.opom.bdms.enums.BloodRequestStatus;
 import com.opom.bdms.enums.Urgency;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
