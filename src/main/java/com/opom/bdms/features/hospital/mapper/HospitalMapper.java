@@ -35,6 +35,7 @@ public class HospitalMapper {
                 .phone(entity.getPhone())
                 .email(entity.getEmail())
                 .isVerified(entity.getIsVerified())
+                .masterData(masterDataMapper.toMasterData(entity))
                 .build();
     }
 
