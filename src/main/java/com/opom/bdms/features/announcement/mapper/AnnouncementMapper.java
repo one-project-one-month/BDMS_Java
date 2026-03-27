@@ -34,6 +34,7 @@ public class AnnouncementMapper {
                 .title(entity.getTitle())
                 .content(entity.getContent())
                 .expiredAt(entity.getExpiredAt())
+                .masterData(masterDataMapper.toMasterData(entity))
                 .build();
     }
 
